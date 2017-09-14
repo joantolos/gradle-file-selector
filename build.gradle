@@ -1,0 +1,19 @@
+group 'com.joantolos.gradle.file.selector'
+
+allprojects {
+    version '1.0-SNAPSHOT'
+}
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+    }
+}
