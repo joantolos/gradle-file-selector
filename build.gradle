@@ -1,4 +1,11 @@
+import org.gradle.api.tasks.Copy
+
 group 'com.joantolos.gradle'
+
+def outputFolder = 'gradle-producer/src/main/resources/output/'
+def inputFolder = 'gradle-consumer/src/main/resources/input/'
+def fileSubStr = 'File-Type-A'
+def filePattern = ~/${fileSubStr}/
 
 allprojects {
     version '1.0-SNAPSHOT'
@@ -18,11 +25,26 @@ subprojects {
     }
 }
 
-//task findLastSdf() {
-//    println "in findLastSdf"
-//    lastNegativeSetFile = new File(negativeSetDir).listFiles()
-//            .findAll { filePattern.matcher(it.name) }?.sort { -it.lastModified() }?.head()?.getName()
-//    println "lastNegativeSetFile = " + lastNegativeSetFile
-//    ext.sdFileToCalculate = lastNegativeSetFile
-//    println "ext.sdFileToCalculate = " + ext.sdFileToCalculate
-//}
+task execProducer() {
+    println('Executing producer...')
+    dependsOn ':gradle-producer:produce'
+}
+
+task pickLatest(type: Copy) {
+    println('Searching for the selected file...')
+    String lastFile = new File(outputFolder).listFiles().findAll { filePattern.matcher(it.name) }?.sort { -it.lastModified() }?.head()?.getName()
+
+    from outputFolder + lastFile
+    into inputFolder
+
+    println('Last File found named: ' + lastFile)
+}
+
+task execConsumer() {
+    println('Executing consumer...')
+    dependsOn ':gradle-consumer:consume'
+}
+
+execConsumer.dependsOn pickLatest
+execConsumer.dependsOn execProducer
+execProducer.dependsOn pickLatest

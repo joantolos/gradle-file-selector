@@ -10,4 +10,3 @@ task produce(type: JavaExec) {
     main = 'com.joantolos.gradle.file.producer.ProducerApp'
     classpath = sourceSets.main.runtimeClasspath
 }
-

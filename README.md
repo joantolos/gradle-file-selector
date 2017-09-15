@@ -27,3 +27,13 @@ The goal is to have a gradle task into the main module that will do all the work
 1. Move the selected file from the producer output into the consumer input
   * The selected file is the latest one (using the timestamp on the name), that matches a name prefix
 1. Use the consumer module to log the files content
+
+## How to use it
+
+    gradle process -Pstarting=File-Type-A
+   
+This execution examples does the following:
+ 
+1. Generates a random number of files which names start with: _File-Type-A, File-Type-B and File-Type-C_
+1. Then selects the latest generated one starting with _File-Type-A_ (the property for the gradle task) and moves it into the input folder of the consumer module.
+1. The consumer module reads the file and print the content on console.
