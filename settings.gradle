@@ -1,3 +1,3 @@
-rootProject.name = 'gradle-file-selector'
+rootProject.name = 'gradle-producer-consumer'
 
-include 'gradle-file-builder'
+include 'gradle-producer', 'gradle-consumer'

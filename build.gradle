@@ -1,4 +1,4 @@
-group 'com.joantolos.gradle.file.selector'
+group 'com.joantolos.gradle'
 
 allprojects {
     version '1.0-SNAPSHOT'
@@ -17,3 +17,12 @@ subprojects {
         testCompile group: 'junit', name: 'junit', version: '4.11'
     }
 }
+
+//task findLastSdf() {
+//    println "in findLastSdf"
+//    lastNegativeSetFile = new File(negativeSetDir).listFiles()
+//            .findAll { filePattern.matcher(it.name) }?.sort { -it.lastModified() }?.head()?.getName()
+//    println "lastNegativeSetFile = " + lastNegativeSetFile
+//    ext.sdFileToCalculate = lastNegativeSetFile
+//    println "ext.sdFileToCalculate = " + ext.sdFileToCalculate
+//}
