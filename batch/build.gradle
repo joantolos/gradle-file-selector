@@ -1,0 +1,21 @@
+group 'com.joantolos.gradle.producer.consumer'
+
+sourceCompatibility = 1.8
+
+def outputFolder = 'producer/src/main/resources/output/'
+def inputFolder = 'consumer/src/main/resources/input/'
+def starting = 'File-Type-A'
+
+dependencies {
+    compile group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
+
+    compile project(':producer')
+    compile project(':consumer')
+}
+
+task batchProcess(type: JavaExec) {
+    main = 'com.joantolos.gradle.file.batch.Batch'
+    classpath = sourceSets.main.runtimeClasspath
+    args starting,outputFolder,inputFolder
+}
+
