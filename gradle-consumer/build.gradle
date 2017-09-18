@@ -7,6 +7,7 @@ dependencies {
 }
 
 task consume(type: JavaExec) {
+    dependsOn ':gradle-producer:produce'
     main = 'com.joantolos.gradle.file.consumer.ConsumerApp'
     classpath = sourceSets.main.runtimeClasspath
 }
