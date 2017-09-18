@@ -2,7 +2,7 @@
 
 ## Goal
 
-The goal for this POC is to learn about tasks and Groovy scripting with Gradle.
+The goal for this POC is to learn about tasks and Groovy scripting with Gradle. All the details, conclusions and learning experience is detailed on the blog page: www.joantolos.com/blog/gradleTask 
 
 ## Layout
   
@@ -40,4 +40,8 @@ This execution examples does the following:
 
 ## Batch processor
 
-There is a gradle task named **consume** that opens the _selected file_ and log the content on console. The files are located under it's own _/resources/input_ folder.
+As an alternative to the multiple gradle task and file movement processor, there is an additional batch module to deal with the whole process. So you can invoke:
+
+    gradle processBatch
+
+That task applies all the logic.

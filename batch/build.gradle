@@ -2,8 +2,8 @@ group 'com.joantolos.gradle.producer.consumer'
 
 sourceCompatibility = 1.8
 
-def outputFolder = 'producer/src/main/resources/output/'
-def inputFolder = 'consumer/src/main/resources/input/'
+def outputFolder = '../producer/src/main/resources/output/'
+def inputFolder = '../consumer/src/main/resources/input/'
 def starting = 'File-Type-A'
 
 dependencies {
@@ -14,7 +14,7 @@ dependencies {
 }
 
 task batchProcess(type: JavaExec) {
-    main = 'com.joantolos.gradle.file.batch.Batch'
+    main = 'com.joantolos.gradle.file.batch.BatchApp'
     classpath = sourceSets.main.runtimeClasspath
     args starting,outputFolder,inputFolder
 }
