@@ -4,7 +4,7 @@ sourceCompatibility = 1.8
 
 def outputFolder = 'gradle-producer/src/main/resources/output/'
 def inputFolder = 'gradle-consumer/src/main/resources/input/'
-def fileSubStr = 'File-Type-A'
+def fileSubStr = System.getProperty('starting')
 def filePattern = ~/${fileSubStr}/
 
 buildscript {

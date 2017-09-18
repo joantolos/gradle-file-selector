@@ -13,11 +13,11 @@ There are two modules, producer and consumer:
 
 ## Producer
 
-There is a gradle task named **produceFiles** that creates the random files and store them into _/output_ folder
+There is a gradle task named **produce** that creates the random files and store them into _/resources/output_ folder
 
 ## Consumer
 
-There is a gradle task named **consumeFile** that opens the _selected file_ and log the content on console. The files are located under it's own _/resources/input_ folder.
+There is a gradle task named **consume** that opens the _selected file_ and log the content on console. The files are located under it's own _/resources/input_ folder.
 
 ## Gradle task
 
@@ -30,7 +30,7 @@ The goal is to have a gradle task into the main module that will do all the work
 
 ## How to use it
 
-    gradle process -Pstarting=File-Type-A
+    gradle process -Dstarting=File-Type-A
    
 This execution examples does the following:
  
