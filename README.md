@@ -1,4 +1,4 @@
-# Gradle Producer - Consumer
+# Producer - Consumer
 
 ## Goal
 
@@ -37,3 +37,7 @@ This execution examples does the following:
 1. Generates a random number of files which names start with: _File-Type-A, File-Type-B and File-Type-C_
 1. Then selects the latest generated one starting with _File-Type-A_ (the property for the gradle task) and moves it into the input folder of the consumer module.
 1. The consumer module reads the file and print the content on console.
+
+## Batch processor
+
+There is a gradle task named **consume** that opens the _selected file_ and log the content on console. The files are located under it's own _/resources/input_ folder.

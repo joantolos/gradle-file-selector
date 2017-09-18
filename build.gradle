@@ -19,5 +19,5 @@ subprojects {
 }
 
 task process() {
-    dependsOn ':gradle-consumer:consume'
+    dependsOn ':consumer:consume'
 }
