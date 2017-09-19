@@ -2,7 +2,7 @@
 
 ## Goal
 
-The goal for this POC is to learn about tasks and Groovy scripting with Gradle. All the details, conclusions and learning experience is detailed on the blog page: www.joantolos.com/blog/gradleTask 
+The goal for this POC is to learn about tasks and Groovy scripting with Gradle. All the details, conclusions and learning experience is detailed on the blog page: www.joantolos.com/blog/gradletask 
 
 ## Layout
   
