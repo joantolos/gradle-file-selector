@@ -4,8 +4,7 @@ sourceCompatibility = 1.8
 
 def outputFolder = 'producer/src/main/resources/output/'
 def inputFolder = 'consumer/src/main/resources/input/'
-def fileSubStr = System.getProperty('starting')
-def filePattern = ~/${fileSubStr}/
+def filePattern = ~/${'File-Type-A'}/
 
 buildscript {
     repositories {
@@ -29,10 +28,8 @@ task produce(type: JavaExec) {
 
     doLast {
         String lastFile = new File(outputFolder).listFiles().findAll { filePattern.matcher(it.name) }?.sort { -it.lastModified() }?.head()?.getName()
-        println('Last File found named: ' + lastFile)
-
-        println('File copied from ' + outputFolder + ' to ' + inputFolder + ": "+lastFile)
         FileUtils.copyFileToDirectory(new File(outputFolder + lastFile), new File(inputFolder))
+        println('File copied from ' + outputFolder + ' to ' + inputFolder + ": "+lastFile)
     }
 
 }

@@ -30,12 +30,12 @@ The goal is to have a gradle task into the main module that will do all the work
 
 ## How to use it
 
-    gradle process -Dstarting=File-Type-A
+    gradle process
    
 This execution examples does the following:
  
 1. Generates a random number of files which names start with: _File-Type-A, File-Type-B and File-Type-C_
-1. Then selects the latest generated one starting with _File-Type-A_ (the property for the gradle task) and moves it into the input folder of the consumer module.
+1. Then selects the latest generated one starting with _File-Type-A_ (defined on the gradle.build) and moves it into the input folder of the consumer module.
 1. The consumer module reads the file and print the content on console.
 
 ## Batch processor

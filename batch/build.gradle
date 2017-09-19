@@ -13,7 +13,7 @@ dependencies {
     compile project(':consumer')
 }
 
-task batchProcess(type: JavaExec) {
+task processBatch(type: JavaExec) {
     main = 'com.joantolos.gradle.file.batch.BatchApp'
     classpath = sourceSets.main.runtimeClasspath
     args starting,outputFolder,inputFolder
