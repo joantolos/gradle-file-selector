@@ -6,9 +6,8 @@ dependencies {
     compile group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
 }
 
-task consume(type: JavaExec) {
+task process(type: JavaExec) {
     dependsOn ':producer:produce'
     main = 'com.joantolos.gradle.file.consumer.ConsumerApp'
     classpath = sourceSets.main.runtimeClasspath
 }
-
