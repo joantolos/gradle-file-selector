@@ -1,3 +1,3 @@
-rootProject.name = 'producer-consumer'
+rootProject.name = 'gradle-file-selector'
 
 include 'producer', 'consumer', 'batch'
